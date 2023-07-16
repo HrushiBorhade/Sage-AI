@@ -19,9 +19,7 @@ export const Copy: FC<CopyProps> = ({}) => {
     <Dialog>
       <DialogTrigger>
         <div className="flex p-2 rounded-full bg-zinc-800 hover:bg-blue-600">
-          <button
-            onClick={() => copy("Rediscover your mental wellbeing with sage")}
-          >
+          <button onClick={() => copy("https://sage-ai-hrushi.vercel.app/")}>
             <Share2 className="w-4 h-4 fit text-zinc-300 hover:text-white" />
           </button>
         </div>
@@ -30,7 +28,7 @@ export const Copy: FC<CopyProps> = ({}) => {
         <DialogHeader className="flex flex-col items-center justify-center gap-2">
           <div>
             <Badge className="px-4 py-2 pb-3 mb-8 text-lg text-white bg-blue-700 hover:bg-blue-800 font-heading">
-              sage.vercel.app
+              sage-ai-hrushi.vercel.app
               <Link2 className="w-6 h-6 mt-1 ml-2 text-white" />
             </Badge>
           </div>
