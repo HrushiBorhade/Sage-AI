@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* scrolling-touch scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 */
+@layer base {
+  :root {
+    ::-webkit-scrollbar {
+      background-color: black;
+      width: 2px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #424242;
+      border-radius: 20px;
+    }
+    --color-hero_primary: #dcff50;
+    --color-hero_secondary: #7b61ff;
+    --color-hero_heading: #f5f5f7;
+    --color-hero_text: rgba(255, 255, 255, 0.6);
+    --color-hero_background: #090909;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer utilities {
+  .imessage p::before,
+  .imessage p::after {
+    bottom: -0.1rem;
+    content: "";
+    height: 1rem;
+    position: absolute;
+  }
+}
