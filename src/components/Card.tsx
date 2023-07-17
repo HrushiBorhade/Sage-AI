@@ -22,6 +22,13 @@ import { Message, nanoid } from "ai";
 type CardProps = React.ComponentProps<typeof Card>;
 
 export function CardDemo({ className, ...props }: CardProps) {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      // @ts-ignore
+      handleSubmit(event as React.FormEvent<HTMLFormElement>);
+    }
+  };
   const initialMessages: Message[] = [
     {
       id: nanoid(),
@@ -156,19 +163,7 @@ export function CardDemo({ className, ...props }: CardProps) {
         <div className="relative flex items-center justify-center w-full overflow-hidden outline-none bg-zinc-900 rounded-3xl">
           <form className="flex w-full px-2" onSubmit={handleSubmit}>
             <TextareaAutosize
-              // onKeyDown={(e) => {
-              //   if (e.key === "Enter" && !e.shiftKey) {
-              //     e.preventDefault();
-
-              //     // const message: Message = {
-              //     //   : nanoid(),
-              //     //   isUserMessage: true,
-              //     //   text: input,
-              //     // };
-
-              //     // sendMessage(message);
-              //   }
-              // }}
+              onKeyDown={handleKeyDown}
               rows={2}
               maxRows={16}
               value={input}
